@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Your Answers</title>
+    <link rel="stylesheet" href="https://design-system.service.gov.uk/styles/govuk.css">
+</head>
+<body class="govuk-template">
+    <main class="govuk-main-wrapper">
+        <h1 class="govuk-heading-xl">Check Your Answers</h1>
+        <p class="govuk-body">You are traveling to: <strong id="destination"></strong></p>
+        <p class="govuk-body">Name: <strong id="name"></strong></p>
+        <p class="govuk-body">Address: <strong id="address"></strong></p>
+    </main>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        document.getElementById("destination").textContent = urlParams.get("destination");
+        document.getElementById("name").textContent = urlParams.get("name");
+        document.getElementById("address").textContent = urlParams.get("address");
+    </script>
+</body>
+</html>
